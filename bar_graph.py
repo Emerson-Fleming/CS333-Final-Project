@@ -1,3 +1,9 @@
+#Name: Emerson Fleming
+#Date: May 7 2024
+#Class: CS 333 Section 1001
+#Assignment: Final Project
+#File: bar_graph.py
+
 import pandas as pd
 from matplotlib import pyplot as plt
 

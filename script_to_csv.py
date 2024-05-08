@@ -1,3 +1,9 @@
+#Name: Emerson Fleming
+#Date: May 7 2024
+#Class: CS 333 Section 1001
+#Assignment: Final Project
+#File: script_to_csv.py
+
 import pyshark
 import csv
 
