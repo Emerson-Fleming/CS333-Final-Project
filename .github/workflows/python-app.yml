@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
+    - name: Checkout code
+      uses: actions/checkout@v4      
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -33,3 +35,19 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: coverage run
+      run: coverage run -m pytest test_unit_integration.py
+    - name: coverage report
+      run: coverage report
+    - name: docker login
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERUSER }}
+        password: ${{ secrets.DOCKERPW }}
+    - name: docker build and push
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        tags: |
+          efleming20/cs333_final_project:${{ secrets.GH_TOKEN }}
+          efleming20/cs333_final_project:latest
