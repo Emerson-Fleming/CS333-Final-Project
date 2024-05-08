@@ -49,5 +49,5 @@ jobs:
       with:
         push: true
         tags: |
-          efleming20/cs333_final_project:${{ secrets.GH_TOKEN }}
+          efleming20/cs333_final_project:${{ github.sha }}
           efleming20/cs333_final_project:latest
