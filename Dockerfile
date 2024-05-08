@@ -13,15 +13,7 @@ RUN pip install --upgrade pip -r requirements.txt
 COPY . .
 
 # Install additional tools (if needed)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    flake8 \
-    pytest \
-    pyshark \
-    matplotlib \
-    pandas
-
-# Expose port (if your application listens on a specific port)
-# EXPOSE 8000
+RUN python3 -m pip install --upgrade pip flake8 pytest pyshark matplotlib pandas coverage
 
 # Set the command to run your application (optional)
 CMD [ "python", "test_unit_integration.py" ]  # Replace with your application entry point
